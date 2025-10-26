@@ -1,6 +1,8 @@
 Projeto de Java: Conta Bancária
 
 #Este é o meu primeiro projeto em Java, desenvolvido como exercício acadêmico para aprender encapsulamento e modificadores de acesso.
+
+
 1.Objetivo do Projeto
 O objetivo era criar uma classe ContaBancaria com os seguintes requisitos:
 Atributos:
@@ -20,7 +22,9 @@ Criar métodos públicos para:
 O que foi implementado:
 
 Classe ContaBancaria com atributos privados e métodos públicos para acessar e modificar os dados de forma segura.
+
     1.Verificação de valores válidos para depósito e saque.
+
     2.Menu interativo no terminal, permitindo que o usuário:
         -Deposite valores.
         -Saque valores.
