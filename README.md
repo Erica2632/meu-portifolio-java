@@ -1,41 +1,48 @@
+# 👋 Olá! Eu sou Érica Cristina
+Estudante de Engenharia de Software (2º ano) em transição de carreira.
+---
+Minha trajetória profissional inclui atuações como Auxiliar Administrativo e Encarregada de Departamento Pessoal, o que me proporcionou sólidas competências em organização, análise e atenção a detalhes.
 
-# meu-portfolio
-=======
-Projeto de Java: Conta Bancária
+Atualmente, concentro meu estudo em **Java**. Possuo conhecimento prévio em Python e Django.
 
-#Este é o meu primeiro projeto em Java, desenvolvido como exercício acadêmico para aprender encapsulamento e modificadores de acesso.
+---
 
+## 💻 Projetos em Destaque
 
-1.Objetivo do Projeto
-O objetivo era criar uma classe ContaBancaria com os seguintes requisitos:
-Atributos:
-    -titular (String)
-    -numeroConta (String)
-    -agencia (String)
-    -saldo (double)
+### 🏦 Projeto de Java: Conta Bancária  
 
-2.Aplicar encapsulamento, protegendo os atributos com modificadores de acesso private.
-Criar métodos públicos para:
-    -Consultar saldo (getSaldo())
-    -Depositar valores (depositar(double valor))
-    -Sacar valores (sacar(double valor)), verificando saldo suficiente.
+**Objetivo:**  
+- Criar uma classe ContaBancaria com atributos privados (titular, numeroConta, agencia, saldo) e métodos públicos para consultar saldo, depositar e sacar valores.  
 
-3.No main, deveria-se criar uma instância da conta, realizar depósitos e saques e mostrar o saldo final.
+**Funcionalidades:**  
+- Menu interativo no terminal para depósitos, saques e consulta de saldo  
+- Validação de operações (depósito e saque)  
+- Estrutura organizada e segura, seguindo princípios de encapsulamento  
 
-O que foi implementado:
+**Exemplo de Código:**
 
-Classe ContaBancaria com atributos privados e métodos públicos para acessar e modificar os dados de forma segura.
+```java
+ContaBancaria conta = new ContaBancaria("Louro José", "0025-0", "111550", 2500.0);
+conta.depositar(500);
+conta.sacar(200);
+System.out.println("Saldo atual: " + conta.getSaldo());
+```
 
-    1.Verificação de valores válidos para depósito e saque.
+**Observações:**  
+- Projeto desenvolvido como atividade acadêmica, aplicando conceitos de **POO** em **Java**, especialmente encapsulamento.
+- Pode ser expandido para incluir transferência entre contas, histórico de transações e outras funcionalidades.
 
-    2.Menu interativo no terminal, permitindo que o usuário:
-        -Deposite valores.
-        -Saque valores.
-        -Consulte o saldo atual.
-        -Mensagens de feedback para cada operação.
+**Habilidades Técnicas**  
+- Java  
+- Python  
+- SQL  
+- Git/GitHub  
+- Django  
+- APIs REST  
+- Interesse em aprendizado contínuo em frameworks e boas práticas de programação  
 
-#Observações
-Este projeto foi feito para fins de estudo, aplicando conceitos de POO (Programação Orientada a Objetos) em Java, especialmente encapsulamento.
-É possível expandir o projeto incluindo transferência entre contas, histórico de transações, entre outros.
+---
 
+## 📫 Contato
 
+📧 ericacristina2632@gmail.com
