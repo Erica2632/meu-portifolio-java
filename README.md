@@ -12,7 +12,7 @@ O objetivo principal foi implementar a persistência de dados sem o uso de frame
 
 ### Destaques Técnicos
 
-- Arquitetura DAO (Data Access Object), separando regra de negócio da camada de dados
+- Arquitetura DAO (Data Access Object)
 - Uso de PreparedStatement para prevenir SQL Injection
 - Gerenciamento de recursos com try-with-resources
 
@@ -20,10 +20,10 @@ O objetivo principal foi implementar a persistência de dados sem o uso de frame
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Java 17  
-- MySQL  
-- JDBC  
-- Maven  
+- Java 17
+- MySQL
+- JDBC
+- Maven
 
 ---
 
@@ -42,49 +42,26 @@ CREATE TABLE contato (
     email VARCHAR(100)
 );
 
-
-
+---
 🚀 Como Rodar e Testar
 1. Clonar o repositório
-
-No terminal, execute:
-
-git clone https://github.com/Erica2632/meu-portifolio-java.git
-
-2. Configurar o banco de dados
-
-Vá até src/main/java/agenda
-
-Abra o arquivo Conexao.java
-
-Altere usuário e senha conforme seu MySQL
-
-3. Executar o projeto
-
-Abra a classe Main.java na IDE
-
-Execute o projeto
-
-O menu será exibido no terminal
-
-
-🚀 Como Rodar e Testar
-1. Clonar o repositório
-No terminal, execute:
-
 bash
 Copiar código
 git clone https://github.com/Erica2632/meu-portifolio-java.git
 2. Configurar o banco de dados
-Acesse a pasta src/main/java/agenda
+Acesse src/main/java/agenda
 
 Abra o arquivo Conexao.java
 
-Altere usuário e senha conforme suas credenciais do MySQL
+Configure usuário e senha do MySQL
 
 3. Executar o projeto
-Abra a classe Main.java na sua IDE
+Abra a classe Main.java
 
-Execute o projeto
+Execute pela IDE
 
 O menu será exibido no terminal
+
+
+É isso.  
+Esse é o código correto.
