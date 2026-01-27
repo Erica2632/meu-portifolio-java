@@ -6,29 +6,30 @@ Projeto desenvolvido para aplicar conceitos fundamentais de conexão entre **Jav
 
 ## 📋 Sobre o Projeto
 
-Este é um sistema de gerenciamento de contatos (CRUD) que opera via terminal.  
+Este é um sistema de gerenciamento de contatos (CRUD) que opera via terminal.
+
 O objetivo principal foi implementar a persistência de dados sem o uso de frameworks automáticos, garantindo o entendimento profundo do funcionamento do **JDBC** e do padrão **DAO**.
 
-**Destaques Técnicos:**
+### Destaques Técnicos
 
-- **Arquitetura DAO (Data Access Object):** Separação clara entre a regra de negócio e a camada de banco de dados.
-- **Segurança:** Uso de `PreparedStatement` para prevenir SQL Injection.
-- **Gerenciamento de Recursos:** Implementação de `try-with-resources` para fechar conexões automaticamente.
+- Arquitetura DAO (Data Access Object), separando regra de negócio da camada de dados
+- Uso de PreparedStatement para prevenir SQL Injection
+- Gerenciamento de recursos com try-with-resources
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Java 17**  
-- **MySQL**  
-- **JDBC**  
-- **Maven**
+- Java 17  
+- MySQL  
+- JDBC  
+- Maven  
 
 ---
 
 ## 🗄️ Documentação do Banco de Dados
 
-Para o projeto funcionar, copie e rode este script no seu MySQL:
+Para o projeto funcionar, copie e execute o script abaixo no MySQL:
 
 ```sql
 CREATE DATABASE agenda;
@@ -43,28 +44,47 @@ CREATE TABLE contato (
 
 
 
-
 🚀 Como Rodar e Testar
+1. Clonar o repositório
 
-Clonar o Repositório
-
-Abra seu terminal e rode:
+No terminal, execute:
 
 git clone https://github.com/Erica2632/meu-portifolio-java.git
 
+2. Configurar o banco de dados
 
-Configurar o Banco
-
-Vá na pasta src/main/java/agenda
+Vá até src/main/java/agenda
 
 Abra o arquivo Conexao.java
 
-Troque o usuário e a senha pelos seus dados do MySQL
+Altere usuário e senha conforme seu MySQL
 
-Rodar o Projeto
+3. Executar o projeto
 
+Abra a classe Main.java na IDE
+
+Execute o projeto
+
+O menu será exibido no terminal
+
+
+🚀 Como Rodar e Testar
+1. Clonar o repositório
+No terminal, execute:
+
+bash
+Copiar código
+git clone https://github.com/Erica2632/meu-portifolio-java.git
+2. Configurar o banco de dados
+Acesse a pasta src/main/java/agenda
+
+Abra o arquivo Conexao.java
+
+Altere usuário e senha conforme suas credenciais do MySQL
+
+3. Executar o projeto
 Abra a classe Main.java na sua IDE
 
-Clique em Run (Executar)
+Execute o projeto
 
-O menu vai aparecer no terminal
+O menu será exibido no terminal
