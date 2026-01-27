@@ -43,8 +43,8 @@ CREATE TABLE contato (
 );
 
 ```
-
----🚀 Como Rodar e Testar
+---
+##🚀 Como Rodar e Testar
 1. Clonar o repositório
 bash
 Copiar código
