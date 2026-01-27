@@ -45,24 +45,19 @@ CREATE TABLE contato (
 ```
 ---
 ## 🚀 Como Rodar e Testar
-1. Clonar o repositório
-bash
-Copiar código
+# 1. Clonar o repositório
 git clone https://github.com/Erica2632/meu-portifolio-java.git
+
+# 2. Configurar o banco
+# Edite as credenciais em: src/main/java/agenda/Conexao.javat
 2. Configurar o banco de dados
-Acesse src/main/java/agenda
-
-Abra o arquivo Conexao.java
-
-Configure usuário e senha do MySQL
+- Acesse src/main/java/agenda
+- Abra o arquivo Conexao.java
+-Configure usuário e senha do MySQL
 
 3. Executar o projeto
-Abra a classe Main.java
-
-Execute pela IDE
-
-O menu será exibido no terminal
+- Abra a classe Main.java
+- Execute pela IDE
+- O menu será exibido no terminal
 
 
-É isso.  
-Esse é o código correto.
