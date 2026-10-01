@@ -1,8 +1,7 @@
 package com.erica.dpcontrole.dpcontrole.controller;
 
-import com.erica.dpcontrole.dpcontrole.dto.AtualizarFolhaDTO;
-import com.erica.dpcontrole.dpcontrole.dto.FolhaRespostaDTO;
-import com.erica.dpcontrole.dpcontrole.dto.FuncionarioRespostaDTO;
+import com.erica.dpcontrole.dpcontrole.dto.*;
+import com.erica.dpcontrole.dpcontrole.model.Comissao;
 import com.erica.dpcontrole.dpcontrole.model.FolhaPagamento;
 import com.erica.dpcontrole.dpcontrole.service.FolhaPagamentoService;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,8 +9,10 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.YearMonth;
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("/folhas")
@@ -22,8 +23,8 @@ public class FolhaPagamentoController {
         this.service = service;
     }
 
-    @PostMapping("/gerar-folha-automatica/{competencia}")
-    public ResponseEntity<List<FolhaRespostaDTO>> gerarFolhaAutomatica(@PathVariable String competencia) {
+    @PostMapping("gerar-folha-automatica/{competencia}")
+    public ResponseEntity<List<FolhaRespostaDTO>> gerarFolhaAutomatica(@PathVariable YearMonth competencia) {
         List<FolhaPagamento> folhas = service.gerarFolhaAutomatica(competencia);
 
         List<FolhaRespostaDTO> resposta = folhas.stream()
@@ -31,10 +32,11 @@ public class FolhaPagamentoController {
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(resposta);
+
     }
 
     @GetMapping("/{competencia}")
-    public ResponseEntity<List<FolhaRespostaDTO>> listarPorCompetencia(@PathVariable String competencia) {
+    public ResponseEntity<List<FolhaRespostaDTO>> listarPorCompetencia(@PathVariable YearMonth competencia) {
         List<FolhaPagamento> folhas = service.listarPorCompetencia(competencia);
 
         List<FolhaRespostaDTO> resposta = folhas.stream()
@@ -44,9 +46,21 @@ public class FolhaPagamentoController {
         return ResponseEntity.ok(resposta);
     }
 
+    @GetMapping("listar-comissao")
+    public ResponseEntity<List<ComissaoRespostaDTO>> listar(@RequestParam (required = false) String cargo  , @RequestParam YearMonth competencia ) {
+
+        List<Comissao> comissoes = service.listar(cargo, competencia);
+
+        List<ComissaoRespostaDTO> resposta = comissoes.stream()
+                .map(ComissaoRespostaDTO::new)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(resposta);
+    }
+
     @PutMapping("/{competencia}/{cpf}")
     public ResponseEntity<?> atualizarValores(
-            @PathVariable String competencia,
+            @PathVariable YearMonth competencia,
             @PathVariable String cpf,
             @Valid @RequestBody AtualizarFolhaDTO dados) {
 
@@ -59,7 +73,7 @@ public class FolhaPagamentoController {
     }
 
     @DeleteMapping("/{competencia}")
-    public ResponseEntity<Void> deletarPorCompetencia(@PathVariable String competencia) {
+    public ResponseEntity<Void> deletarPorCompetencia(@PathVariable YearMonth competencia) {
         service.deletarPorCompetencia(competencia);
         return ResponseEntity.noContent().build();
     }

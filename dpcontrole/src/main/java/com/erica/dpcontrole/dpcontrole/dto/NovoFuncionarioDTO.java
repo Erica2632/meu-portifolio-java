@@ -1,8 +1,12 @@
 package com.erica.dpcontrole.dpcontrole.dto;
+import com.erica.dpcontrole.dpcontrole.model.TipoFuncionario;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Getter @Setter
 public class NovoFuncionarioDTO {
     private String nome;
     private String cpf;
@@ -10,52 +14,5 @@ public class NovoFuncionarioDTO {
     private LocalDate dataAdmissao;
     private String cargo;
     private BigDecimal salarioBase;
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getPis() {
-        return pis;
-    }
-
-    public void setPis(String pis) {
-        this.pis = pis;
-    }
-
-    public LocalDate getDataAdmissao() {
-        return dataAdmissao;
-    }
-
-    public void setDataAdmissao(LocalDate dataAdmissao) {
-        this.dataAdmissao = dataAdmissao;
-    }
-
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
-    public BigDecimal getSalarioBase() {
-        return salarioBase;
-    }
-
-    public void setSalarioBase(BigDecimal salarioBase) {
-        this.salarioBase = salarioBase;
-    }
+    private TipoFuncionario tipoFuncionario;
 }

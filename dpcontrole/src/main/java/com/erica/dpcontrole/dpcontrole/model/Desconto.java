@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.YearMonth;
 
 @Entity
 @Setter @Getter
@@ -23,6 +24,8 @@ public class Desconto {
     private BigDecimal valorDesconto;
 
     private LocalDate data;
+
+    private YearMonth competencia;
 
     @NotBlank(message = "A descrição é obrigatória")
     private String descricao;

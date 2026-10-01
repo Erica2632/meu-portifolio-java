@@ -1,33 +1,45 @@
 package com.erica.dpcontrole.dpcontrole.service;
 
 import com.erica.dpcontrole.dpcontrole.dto.AtualizarFolhaDTO;
+import com.erica.dpcontrole.dpcontrole.model.Comissao;
 import com.erica.dpcontrole.dpcontrole.model.FolhaPagamento;
 import com.erica.dpcontrole.dpcontrole.model.Funcionario;
+import com.erica.dpcontrole.dpcontrole.repository.ComissaoRepository;
 import com.erica.dpcontrole.dpcontrole.repository.FolhaPagamentoRepository;
 import com.erica.dpcontrole.dpcontrole.repository.FuncionarioRepository;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
-import java.util.List;
+import java.math.RoundingMode;
+import java.time.YearMonth;
+import java.util.*;
 
 @Service
+
 public class FolhaPagamentoService {
+
     private final FolhaPagamentoRepository repository;
     private final FuncionarioRepository funcionarioRepository;
+    private final ComissaoRepository comissaoRepository;
 
-    public FolhaPagamentoService(FolhaPagamentoRepository repository, FuncionarioRepository funcionarioRepository) {
+    public FolhaPagamentoService(FolhaPagamentoRepository repository, FuncionarioRepository funcionarioRepository, ComissaoRepository comissaoRepository){
         this.repository = repository;
         this.funcionarioRepository = funcionarioRepository;
+        this.comissaoRepository= comissaoRepository;
     }
-
-    public List<FolhaPagamento> gerarFolhaAutomatica(String competencia) {
-        List<FolhaPagamento> folhas = new java.util.ArrayList<>();
+    public List<FolhaPagamento> gerarFolhaAutomatica(YearMonth competencia) {
+        Set<Long> idsComFolha= new HashSet<>();
+        for (FolhaPagamento existente : repository.findByCompetencia(competencia)) {
+            idsComFolha.add(existente.getFuncionario().getId());
+        }
+        List<FolhaPagamento> folhas = new ArrayList<>();
 
         for (Funcionario f : funcionarioRepository.findAll()) {
-            if (f.getDataDesligamento() != null || f.getSalarioBase() == null) {
+            if (f.getDataDemissao() != null || f.getSalarioBase() == null) {
                 continue;
             }
-
+        if (idsComFolha.contains(f.getId())) {
+            continue;
+        }
             FolhaPagamento folha = new FolhaPagamento();
             folha.setFuncionario(f);
             folha.setCompetencia(competencia);
@@ -42,36 +54,46 @@ public class FolhaPagamentoService {
         return folhas;
     }
 
-    public List<FolhaPagamento> listarPorCompetencia(String competencia) {
+    public List<FolhaPagamento> listarPorCompetencia(YearMonth competencia) {
         return repository.findByCompetencia(competencia);
     }
 
-    public FolhaPagamento atualizarValores(String competencia, String cpf, AtualizarFolhaDTO dados) {
-        FolhaPagamento folha = repository.findByCompetenciaAndFuncionario_Cpf(competencia, cpf)
+    public FolhaPagamento atualizarValores(YearMonth competencia, String cpf, AtualizarFolhaDTO dados) {
+        FolhaPagamento folha = repository.findByCompetenciaAndFuncionario_Cpf( competencia, cpf)
                 .orElseThrow(() -> new RuntimeException("Folha não encontrada"));
 
         int dias = dados.getDiasTrabalhados() != null ? dados.getDiasTrabalhados() : folha.getDiasTrabalhados();
-        BigDecimal comissao = dados.getTotalComissao() != null ? dados.getTotalComissao() : folha.getTotalComissao();
-        BigDecimal desconto = dados.getTotalDesconto() != null ? dados.getTotalDesconto() : folha.getTotalDesconto();
-
         folha.setDiasTrabalhados(dias);
-        folha.setTotalComissao(comissao);
-        folha.setTotalDesconto(desconto);
 
-        BigDecimal salarioDiario = folha.getSalarioBase().divide(BigDecimal.valueOf(30), 2, java.math.RoundingMode.HALF_UP);
-        BigDecimal salarioProporcional = salarioDiario.multiply(BigDecimal.valueOf(dias));
-        BigDecimal salarioLiquido = salarioProporcional.add(comissao).subtract(desconto);
+        BigDecimal salarioProporcional = folha.getSalarioBase()
+                .multiply(BigDecimal.valueOf(dias))
+                .divide(BigDecimal.valueOf(dias), RoundingMode.HALF_UP);
+        BigDecimal comissao =  folha.getTotalComissao() != null ? folha.getTotalComissao() : BigDecimal.ZERO;
+        BigDecimal desconto = folha.getTotalDesconto() != null ? folha.getTotalDesconto() : BigDecimal.ZERO;
 
-        folha.setSalarioLiquido(salarioLiquido);
+        folha.setSalarioLiquido(salarioProporcional.add(comissao).subtract(desconto));
 
         return repository.save(folha);
     }
 
-    public void deletarPorCompetencia(String competencia) {
+    public void deletarPorCompetencia(YearMonth competencia) {
         List<FolhaPagamento> folhas = repository.findByCompetencia(competencia);
         if (folhas.isEmpty()) {
             throw new RuntimeException("Nenhuma folha encontrada");
         }
         repository.deleteAll(folhas);
     }
+
+    public List<Comissao> listar(String cargo, YearMonth competencia) {
+        if (cargo != null && competencia != null) {
+            return comissaoRepository.findByFuncionario_CargoAndCompetencia(cargo, competencia);
+        } else if (cargo != null) {
+            return comissaoRepository.findByFuncionario_Cargo(cargo);
+        } else if (competencia != null) {
+            return comissaoRepository.findByCompetencia(competencia);
+        } else {
+            return comissaoRepository.findAll();
+        }
+    }
+
 }

@@ -23,19 +23,8 @@ public class FuncionarioController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public FuncionarioRespostaDTO cadastrar (@RequestBody NovoFuncionarioDTO dto){
-
-        Funcionario novoFuncionario= new Funcionario();
-        novoFuncionario.setNome(dto.getNome()); // Alterado para setNome
-        novoFuncionario.setCpf(dto.getCpf());
-        novoFuncionario.setPis(dto.getPis());
-        novoFuncionario.setDataAdmissao(dto.getDataAdmissao());
-        novoFuncionario.setCargo(dto.getCargo());
-        novoFuncionario.setSalarioBase(dto.getSalarioBase());
-
-        Funcionario funcionarioSalvo= service.salvar(novoFuncionario);
-
-        return new FuncionarioRespostaDTO(funcionarioSalvo);
+    public FuncionarioRespostaDTO cadastrar(@RequestBody NovoFuncionarioDTO dto) {
+        return service.cadastrar(dto);
     }
 
     @GetMapping
