@@ -2,9 +2,9 @@
 
 ## Problema
 
-Este projeto foi inspirado por um problema que vivenciei no departamento pessoal de uma empresa de aproximadamente 130 funcionários. Como a contabilidade era terceirizada, o controle de folha de pagamento ou comissionamento, dentre outras informações, era por meio de planilhas. Não existia um sistema para centralizar as informações dos funcionários dentro da empresa. 
-  Devido essa ausência para ter por exemplo uma lista como aniversariantes do mês era necessário consultar a contabilidade. 
-  Com base nesse cenário, eu desenvolvi essa API como um projeto de estudo, com o objetivo de simular as centralizações dessas operações em um único lugar e praticar os conceitos de desenvolvimento.
+Este projeto foi inspirado por um problema que vivenciei no departamento pessoal de uma empresa de aproximadamente 130 funcionários. Como a contabilidade era terceirizada, o controle de folha de pagamento ou comissionamento, dentre outras informações, era por meio de planilhas. Não existia um sistema para centralizar as informações dos funcionários dentro da empresa.  
+Devido a essa ausência, para ter, por exemplo, uma lista de aniversariantes do mês, era necessário consultar a contabilidade.  
+Com base nesse cenário, desenvolvi essa API como um projeto de estudo, com o objetivo de simular a centralização dessas operações em um único lugar e praticar os conceitos de desenvolvimento.
 
 
 ## O que a aplicação faz
