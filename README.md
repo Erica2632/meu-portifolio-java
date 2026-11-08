@@ -2,9 +2,10 @@
 
 ## Problema
 
-Na empresa onde trabalhei, a contabilidade era terceirizada e o Departamento Pessoal, sob minha responsabilidade, o controle era por meio de planilhas separadas (folha de pagamento, comissões e etc). Sem um cadastro centralizado, qualquer consulta em massa era trabalhosa: para saber, por exemplo, os aniversariantes do mês entre 130 funcionários, seria preciso levantar a ficha de cada um e montar uma nova planilha.
+Este projeto foi inspirado por um problema que vivenciei no departamento pessoal de uma empresa de aproximadamente 130 funcionários. Como a contabilidade era terceirizada, o controle de folha de pagamento ou comissionamento, dentre outras informações, era por meio de planilhas. Não existia um sistema para centralizar as informações dos funcionários dentro da empresa. 
+Devido essa ausência para ter por exemplo uma lista como aniversariantes do mês era necessário consultar a contabilidade. 
+Com base nesse cenário, eu desenvolvi essa API como um projeto de estudo, com o objetivo de simular as centralizações dessas operações em um único lugar e praticar os conceitos de desenvolvimento.
 
-Esta API centraliza essas operações em um só lugar.
 
 ## O que a aplicação faz
 
