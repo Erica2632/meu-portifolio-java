@@ -14,7 +14,7 @@ Com base nesse cenário, desenvolvi essa API como um projeto de estudo, com o ob
 
 ## O que a aplicação faz
 
-- Cadastra e gerencia funcionários, com datas de admissão e demissão.
+- Cadastra e gerência funcionários, com datas de admissão e demissão.
 - Gera folhas de pagamento.
 - Calcula comissões, que entram na folha apenas para quem as recebe.
 - Aplica descontos da empresa, com descrição do motivo (ex.: farmácia, perda de material).
