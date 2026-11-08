@@ -1,6 +1,6 @@
 # API de Automação de Departamento Pessoal
 
-API que automatiza o cadastro de funcionários e a geração de folhas de pagamento, calculando comissões, descontos e salário líquido.
+Automatiza o cadastro de funcionários, a geração de folhas de pagamentos, cálculo de comissões, descontos e salário líquido.
 
 ## Problema
 
