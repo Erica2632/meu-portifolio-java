@@ -27,7 +27,7 @@ Com base nesse cenário, desenvolvi essa API como um projeto de estudo, com o ob
 salário líquido = salário base + comissão - descontos
 ```
 
-
+> [!NOTE]
 > Os descontos são apenas os da empresa. Encargos do governo (INSS, FGTS, IR) não são calculados.
 
 ## Escopo
