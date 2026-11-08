@@ -1,5 +1,11 @@
 # API de Automação de Departamento Pessoal
 
+![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?logo=springboot&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-C71A36?logo=apachemaven&logoColor=white)
+![Status](https://img.shields.io/badge/status-em_desenvolvimento-yellow)
+
 ## Problema
 
 Este projeto foi inspirado por um problema que vivenciei no departamento pessoal de uma empresa de aproximadamente 130 funcionários. Como a contabilidade era terceirizada, o controle de folha de pagamento, comissionamento e outras informações era feito por meio de planilhas. Não existia um sistema para centralizar as informações dos funcionários dentro da empresa.<br>
@@ -21,7 +27,8 @@ Com base nesse cenário, desenvolvi essa API como um projeto de estudo, com o ob
 salário líquido = salário base + comissão - descontos
 ```
 
-Os descontos são apenas os da empresa. Encargos do governo (INSS, FGTS, IR) não são calculados.
+> [!NOTE]
+> Os descontos são apenas os da empresa. Encargos do governo (INSS, FGTS, IR) não são calculados.
 
 ## Escopo
 
