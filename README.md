@@ -2,7 +2,7 @@
 
 ## Problema
 
-Na empresa onde trabalhei, a contabilidade era terceirizada e o Departamento Pessoal, sob minha responsabilidade, controlava tudo por planilhas separadas (folha, comissões e descontos). Sem um cadastro centralizado, qualquer consulta em massa era trabalhosa: para saber, por exemplo, os aniversariantes do mês entre 130 funcionários, seria preciso levantar a ficha de cada um e montar uma nova planilha.
+Na empresa onde trabalhei, a contabilidade era terceirizada e o Departamento Pessoal, sob minha responsabilidade, o controle era por meio de planilhas separadas (folha de pagamento, comissões e etc). Sem um cadastro centralizado, qualquer consulta em massa era trabalhosa: para saber, por exemplo, os aniversariantes do mês entre 130 funcionários, seria preciso levantar a ficha de cada um e montar uma nova planilha.
 
 Esta API centraliza essas operações em um só lugar.
 
