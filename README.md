@@ -18,7 +18,7 @@ Com base nesse cenário, desenvolvi essa API como um projeto de estudo, com o ob
 - Gera folhas de pagamento.
 - Calcula comissões, que entram na folha apenas para quem as recebe.
 - Aplica descontos da empresa, com descrição do motivo (ex.: farmácia, perda de material).
-- Gera relatório de descontos por funcionário.
+- Gera relatório de descontos.
 - Calcula o salário líquido final.
 
 ## Regra de cálculo
