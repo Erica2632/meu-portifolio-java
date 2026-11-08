@@ -2,10 +2,11 @@
 
 ## Problema
 
-Este projeto foi inspirado por um problema que vivenciei no departamento pessoal de uma empresa de aproximadamente 130 funcionários. Como a contabilidade era terceirizada, o controle de folha de pagamento ou comissionamento, dentre outras informações, era por meio de planilhas. Não existia um sistema para centralizar as informações dos funcionários dentro da empresa.  
-Devido a essa ausência, para ter, por exemplo, uma lista de aniversariantes do mês, era necessário consultar a contabilidade.  
-Com base nesse cenário, desenvolvi essa API como um projeto de estudo, com o objetivo de simular a centralização dessas operações em um único lugar e praticar os conceitos de desenvolvimento.
+Este projeto foi inspirado por um problema que vivenciei no departamento pessoal de uma empresa de aproximadamente 130 funcionários. Como a contabilidade era terceirizada, o controle de folha de pagamento, comissionamento e outras informações era feito por meio de planilhas. Não existia um sistema para centralizar as informações dos funcionários dentro da empresa.
 
+Devido a essa ausência, para ter, por exemplo, uma lista de aniversariantes do mês, era necessário consultar a contabilidade.
+
+Com base nesse cenário, desenvolvi essa API como um projeto de estudo, com o objetivo de simular a centralização dessas operações em um único lugar e praticar os conceitos de desenvolvimento.
 
 ## O que a aplicação faz
 
@@ -26,15 +27,21 @@ Os descontos são apenas os da empresa. Encargos do governo (INSS, FGTS, IR) nã
 
 ## Escopo
 
-É um esboço de DP para controle interno. Serve de base para conferir a folha da contabilidade, sem preencher planilhas manualmente.
+Este projeto é um esboço de DP para controle interno. Serve de base para conferir a folha da contabilidade, sem preencher planilhas manualmente.
 
 ## Próximos passos
 
-- Concluir a refatoração
-- Implementar validações
-- Limitar o desconto a 40% da remuneração
-- Melhorar o tratamento de erros
-- Criar testes automatizados
-- Listar aniversariantes do mês
-- Exportar dados para a contabilidade
+- [ ] Concluir a refatoração
+- [ ] Implementar validações
+- [ ] Limitar o desconto a 40% da remuneração
+- [ ] Melhorar o tratamento de erros
+- [ ] Criar testes automatizados
+- [ ] Listar aniversariantes do mês
+- [ ] Exportar dados para a contabilidade
+
+## Como rodar
+
+Requisitos: Java 17+, Maven e MySQL. Configuração do banco em `application.properties`.
+
+Comando: `mvn spring-boot:run`
 
